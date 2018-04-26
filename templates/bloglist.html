@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>My Blogs</h1>
+    {% if blogs|length == 0 %}
+    <p>No Blogs yet, try <a href=/addablog>adding one</a></p>
+    {% else %}
+
+        <ul>
+            {% for blog in blogs %}
+            <li class='blogtitle'>{{blog.title}}
+                <br>
+                {{blog.body}}
+                <br>
+
+                <form method='post' action='/p'>
+                    <input type="hidden" name="blog-id" value="{{blog.id}}" />
+                    <label for="public">Public</label>
+                    <input type="radio" name="privacy" id="public" value="public"><br>
+                    <label for="private">Private</label>
+                    <input type="radio" name="privacy" id="private" value="private"><br><br>
+                    <button class="button" type="submit"><span>Change</span></button>
+                </form>             
+                
+            </li>
+            <br>
+            <br>
+            <br>
+            {% endfor %}
+        </ul>
+        
+
+    {% endif %}
+{% endblock %}

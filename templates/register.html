@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Register Here</h1>
+    <p><span>{{derror}}</span></p>
+    <form action="/register" method="POST">
+        <table>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td>
+                    <input name="email" type="email" value="{{ email }}" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Password</label></td>
+                <td>
+                    <input name="password" type="password" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="verify">Verify Password</label></td>
+                <td>
+                    <input name="verify" type="password" />
+                    <span>{{verror}}</span>
+                </td>
+            </tr>
+        </table>
+        <button class="button" type="submit" onclick="window.location.href='/'"><span>Register</span></button>
+    </form>
+{% endblock %}

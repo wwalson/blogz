@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <title>{{title}}</title>
+        <style>
+            .error {
+                color:blue;
+            }
+        </style>
+    </head>
+<body class='body'>
+    <div>
+        
+    </div>
+    <div class='links'>
+        <a href='/mainpage'>Mainpage</a>
+        <a href='/addablog'>Add a secret</a>
+        <a href='/users'>Who else could be here</a>
+        <br>
+        <a href='/register'>Start a Dive into your secrets(register)</a>
+        <a href='/login'> Keep telling me things(login)</a>
+        <a href='/logout'>Your secrets are safe(logout)</a>
+        
+       
+    </div>
+    <div class='base'
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+        {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
+    
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>

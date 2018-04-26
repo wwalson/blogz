@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Main Page</h1>
+        
+    <h2>Blogs</h2>
+    {% if blogs|length == 0 %}
+    <p> Tell me your secrets</p>
+    <p><a href=/addablog> tell me now</a></p>
+    {% else %}
+
+        <u1>
+            {% for blog in blogs %}
+            <li>
+                <a href = '/blogpage?blog-id={{blog.id}}'>{{blog.title}}</a>
+                <br>
+            {% endfor %}
+            </li>
+        </u1>
+
+    {% endif %}
+{% endblock %}
