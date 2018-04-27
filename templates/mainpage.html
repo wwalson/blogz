@@ -13,6 +13,7 @@
             {% for blog in blogs %}
             <li>
                 <a href = '/blogpage?blog-id={{blog.id}}'>{{blog.title}}</a>
+                <a href = '/user?user-id={{blog.owner.id}}'>{{blog.owner.email}}</a>
                 <br>
             {% endfor %}
             </li>

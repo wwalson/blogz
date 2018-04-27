@@ -8,19 +8,12 @@
 
         <ul>
             {% for blog in blogs %}
-            <li class='blogtitle'>{{blog.title}}
+            <li class='blog'><a href='./blogpage?blog-id={{blog.id}}'>{{blog.title}}</a>
                 <br>
                 {{blog.body}}
                 <br>
 
-                <form method='post' action='/p'>
-                    <input type="hidden" name="blog-id" value="{{blog.id}}" />
-                    <label for="public">Public</label>
-                    <input type="radio" name="privacy" id="public" value="public"><br>
-                    <label for="private">Private</label>
-                    <input type="radio" name="privacy" id="private" value="private"><br><br>
-                    <button class="button" type="submit"><span>Change</span></button>
-                </form>             
+                
                 
             </li>
             <br>
